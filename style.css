@@ -1,0 +1,326 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: capitalize;
+  border: none;
+  list-style: none;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+:root {
+  --primary-color: #5138ee;
+  --bg-gradient: linear-gradient(45deg, #02ebad 0%, #5a57fb 50%);
+  --gradient-rose-blue: linear-gradient(25deg, #c2f0ff 0%, #f9d0ffd1 70%);
+  --gradient-gray-white: linear-gradient(25deg, #fff1f1 0%, #c1e9ffd1 70%);
+  --dark-blue: rgb(14, 14, 52);
+}
+nav {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 1px 6px 5px -6px rgba(0, 0, 0, 0.59);
+  width: 100%;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+nav .logo img {
+  width: 100px;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  font-size: 15px;
+  color: black;
+  margin-right: 14px;
+  text-transform: uppercase;
+}
+nav button {
+  background-color: var(--primary-color);
+  padding: 10px 25px;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+}
+section {
+  padding: 3rem;
+}
+.anime {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: move-up 0.5s linear forwards;
+}
+.trending {
+  background-image: var(--gradient-rose-blue);
+  display: flex;
+  justify-content: space-between;
+  padding: 6rem;
+}
+.trending .no-1 span {
+  background-image: var(--bg-gradient);
+  padding: 6px 10px;
+  width: 60px;
+  color: white;
+  animation-delay: 0.4s;
+}
+.trending .title {
+  margin: 2rem 0;
+  font-size: 50px;
+  font-weight: bold;
+  color: var(--dark-blue);
+  animation-delay: 0.5s;
+}
+.trending .para {
+  animation-delay: 0.7s;
+}
+.trending button {
+  padding: 1rem 3rem;
+  background-image: var(--bg-gradient);
+  border-radius: 30px;
+  margin-top: 2rem;
+  font-weight: bold;
+  color: white;
+  animation-delay: 0.8s;
+}
+.trending img {
+  animation-delay: 0.7s;
+}
+@keyframes move-up {
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.heading {
+  font-size: 40px;
+  text-align: center;
+  color: var(--dark-blue);
+  margin: 1rem 0;
+}
+.heading-para {
+  text-align: center;
+  color: gray;
+  margin: 1rem 0;
+  line-height: 25px;
+}
+
+.about .cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.about .card {
+  flex-basis: 27%;
+  background: linear-gradient(180deg, #f4f4f9 40%, #fbfbfd00 60%);
+  padding: 60px 40px;
+  border-radius: 30px;
+  border: 1px solid #e7e7e7;
+  text-align: center;
+  margin: 0 1rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: move-up 0.5s linear forwards;
+}
+.about img {
+  height: 250px;
+}
+.about .card p {
+  color: gray;
+  margin: 20px 0;
+}
+.banner {
+  background-image: linear-gradient(25deg, #160e24 0%, #1e1732d1 40%),
+    url(images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  padding: 4rem;
+  text-align: center;
+  height: 20rem;
+  margin: 3rem;
+  border-radius: 20px;
+}
+.banner h1 {
+  font-size: 40px;
+  margin-bottom: 1rem;
+  color: white;
+}
+.banner p {
+  color: rgb(196, 193, 193);
+}
+.banner button {
+  background-color: transparent;
+  padding: 1rem 2rem;
+  margin-top: 2rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid white;
+  transition: 0.2s linear ease-in;
+}
+.banner button:hover {
+  background-color: white;
+  color: var(--dark-blue);
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.features .left {
+  text-align: right;
+}
+.features .feature {
+  margin: 1rem 2rem;
+  width: 20rem;
+  position: relative;
+}
+.features .feature h1 {
+  color: var(--primary-color);
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+.features .feature p {
+  color: rgb(64, 60, 60);
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+.features .right {
+  text-align: left;
+}
+.features .round {
+  border: 7rem solid var(--primary-color);
+  border-radius: 50%;
+  width: 550px;
+  height: 550px;
+  margin-top: 3rem;
+  animation: MoveUpDown 4s linear infinite;
+  position: absolute;
+  left: 31%;
+  z-index: -1;
+}
+.features .round img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+@keyframes MoveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100px);
+  }
+}
+.screenshots .images {
+  display: flex;
+}
+.screenshots img {
+  width: 20rem;
+  margin: 0 1rem;
+  height: 600px;
+  border-radius: 20px;
+  /* box-shadow: -2px -2px 5px -1px rgba(0, 0, 0, 0.59); */
+  border: 6px solid rgb(221, 221, 221);
+}
+.testimonial {
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+.parallax {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)),
+    url(images/shape.jpg);
+  min-height: 80vh;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 4rem;
+}
+.parallax h1,
+.parallax p {
+  color: white;
+}
+.parallax .cards {
+  display: flex;
+}
+.parallax .card {
+  background-image: var(--bg-gradient);
+  padding: 4rem;
+  margin: 2rem;
+  border-radius: 20px;
+}
+.parallax .profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.parallax .profile img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+.parallax .profile h5 {
+  font-size: 20px;
+}
+.parallax .profile p {
+  font-size: 13px;
+}
+
+.parallax .details {
+  line-height: 30px;
+}
+.packages {
+  background-image: var(--gradient-gray-white);
+}
+.packages .cards {
+  display: flex;
+  justify-content: center;
+}
+.packages .card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 4rem;
+  margin: 1rem;
+  height: 30rem;
+  width: 25rem;
+  margin-top: 4rem;
+}
+.packages button{
+  padding: 1rem 2.5rem;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  border-radius: 30px;
+}
+.packages .card.center {
+  background-image: var(--bg-gradient);
+  border-radius: 5px;
+  height: 40rem;
+  color: white;
+  margin-top: 0;
+  position: relative;
+}
+.packages .card.center button{
+  position: absolute;
+  bottom: 10%;
+  left: 30%;
+}
+.packages .trial {
+  font-size: 23px;
+}
+.packages .price {
+  font-size: 50px;
+  font-weight: bold;
+  margin: 1rem 0;
+}
+.packages ul{
+  margin: 3rem 0;
+}
